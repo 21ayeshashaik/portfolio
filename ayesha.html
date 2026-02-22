@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ayesha Shaik — Software Developer</title>
+  <title>Ayesha Shaik — Software Developer & AI Engineer</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap"
     rel="stylesheet">
@@ -40,60 +40,17 @@
       color: var(--text);
       font-family: 'Syne', sans-serif;
       overflow-x: hidden;
-      cursor: none;
     }
 
-    /* Custom cursor */
-    .cursor {
-      width: 10px;
-      height: 10px;
-      background: var(--accent);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      transition: transform 0.1s, width 0.2s, height 0.2s, background 0.2s;
-      mix-blend-mode: screen;
-    }
-
-    .cursor-ring {
-      width: 36px;
-      height: 36px;
-      border: 1px solid rgba(79, 168, 255, 0.5);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9998;
-      transform: translate(-50%, -50%);
-      transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
-    }
-
-    .cursor.hover {
-      width: 20px;
-      height: 20px;
-      background: var(--accent3);
-    }
-
-    .cursor-ring.hover {
-      width: 56px;
-      height: 56px;
-      border-color: var(--accent3);
-    }
-
-    /* Animated background grid */
     .bg-grid {
       position: fixed;
       inset: 0;
-      background-image:
-        linear-gradient(rgba(79, 168, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(79, 168, 255, 0.04) 1px, transparent 1px);
+      background-image: linear-gradient(rgba(79, 168, 255, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(79, 168, 255, 0.04) 1px, transparent 1px);
       background-size: 60px 60px;
       z-index: 0;
       pointer-events: none;
     }
 
-    /* Orbs */
     .orb {
       position: fixed;
       border-radius: 50%;
@@ -140,7 +97,6 @@
       }
     }
 
-    /* Nav */
     nav {
       position: fixed;
       top: 0;
@@ -182,7 +138,6 @@
       color: var(--accent);
     }
 
-    /* Sections common */
     section {
       position: relative;
       z-index: 1;
@@ -239,7 +194,7 @@
     }
 
     .hero-name {
-      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
       font-weight: 800;
       line-height: 1.05;
       letter-spacing: -0.03em;
@@ -265,7 +220,7 @@
     }
 
     .hero-desc {
-      max-width: 540px;
+      max-width: 560px;
       font-size: 0.95rem;
       color: var(--muted);
       line-height: 1.8;
@@ -291,7 +246,7 @@
       font-size: 0.85rem;
       font-weight: 600;
       letter-spacing: 0.05em;
-      cursor: none;
+      cursor: pointer;
       text-decoration: none;
       transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 0 30px rgba(79, 168, 255, 0.25);
@@ -313,7 +268,7 @@
       font-size: 0.85rem;
       font-weight: 600;
       letter-spacing: 0.05em;
-      cursor: none;
+      cursor: pointer;
       text-decoration: none;
       transition: border-color 0.2s, transform 0.2s, background 0.2s;
     }
@@ -399,7 +354,7 @@
       }
     }
 
-    /* Section layout */
+    /* Sections */
     .section-inner {
       max-width: 1100px;
       margin: 0 auto;
@@ -514,6 +469,12 @@
     }
 
     /* Experience */
+    .exp-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
     .exp-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -593,33 +554,49 @@
       background: var(--bg2);
     }
 
-    /* Project category tabs */
-    .project-tabs {
+    .project-tabs-container {
       display: flex;
-      gap: 12px;
-      margin-bottom: 40px;
+      justify-content: center;
+      margin-bottom: 60px;
+      width: 100%;
+    }
+
+    .project-tabs {
+      display: inline-flex;
+      background: var(--surface2);
+      padding: 8px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      gap: 4px;
       flex-wrap: wrap;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     }
 
     .project-tab {
-      padding: 10px 24px;
-      border-radius: 40px;
-      border: 1px solid var(--border);
+      padding: 14px 32px;
+      border-radius: 10px;
+      border: none;
       background: transparent;
       color: var(--muted);
       font-family: 'Syne', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      cursor: none;
-      transition: all 0.25s;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .project-tab.active,
-    .project-tab:hover {
-      background: rgba(79, 168, 255, 0.1);
-      border-color: var(--accent);
-      color: var(--accent);
+    .project-tab.active {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(79, 168, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .project-tab:not(.active):hover {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
     }
 
     .project-category {
@@ -630,7 +607,6 @@
       display: block;
     }
 
-    /* Sub-section divider */
     .project-subsection {
       margin-bottom: 48px;
     }
@@ -830,8 +806,6 @@
       border-radius: 12px;
       padding: 32px;
       transition: border-color 0.3s, transform 0.3s;
-      position: relative;
-      overflow: hidden;
     }
 
     .edu-card:hover {
@@ -951,7 +925,6 @@
       font-weight: 500;
     }
 
-    /* Footer */
     footer {
       border-top: 1px solid var(--border);
       padding: 30px 60px;
@@ -972,7 +945,6 @@
       color: var(--accent);
     }
 
-    /* Reveal animation */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -984,7 +956,108 @@
       transform: translateY(0);
     }
 
-    /* Responsive */
+
+    /* All Projects Grid */
+    #all-projects {
+      background: var(--bg);
+    }
+
+    .all-projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .mini-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+
+    .mini-card:hover {
+      border-color: rgba(79, 168, 255, 0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .mini-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mini-lang {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.08em;
+    }
+
+    .mini-lang.py {
+      background: rgba(79, 168, 255, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(79, 168, 255, 0.25);
+    }
+
+    .mini-lang.ts {
+      background: rgba(6, 255, 212, 0.1);
+      color: var(--accent3);
+      border: 1px solid rgba(6, 255, 212, 0.25);
+    }
+
+    .mini-lang.js {
+      background: rgba(168, 85, 247, 0.1);
+      color: var(--accent2);
+      border: 1px solid rgba(168, 85, 247, 0.25);
+    }
+
+    .mini-link {
+      font-size: 1.1rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .mini-link:hover {
+      color: var(--accent3);
+    }
+
+    .mini-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .mini-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .mini-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .mini-tags span {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      padding: 3px 8px;
+      background: rgba(79, 168, 255, 0.06);
+      border: 1px solid rgba(79, 168, 255, 0.12);
+      border-radius: 4px;
+      color: var(--muted);
+    }
+
     @media (max-width: 768px) {
       nav {
         padding: 16px 24px;
@@ -1028,9 +1101,6 @@
 </head>
 
 <body>
-
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
   <div class="bg-grid"></div>
   <div class="orb orb1"></div>
   <div class="orb orb2"></div>
@@ -1043,6 +1113,7 @@
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -1056,16 +1127,18 @@
         <span class="line2">Future, One</span>
         Commit at a Time.
       </h1>
-      <p class="hero-subtitle">Software Developer · AI &amp; GenAI Enthusiast · Full-Stack</p>
-      <p class="hero-desc">Final-year B.Tech CSE student (2026) with strong analytical skills, passionate about AI,
-        Generative AI, and backend development. Experienced across the SDLC and proficient in Java, Python, Node.js,
-        Next.js, and TypeScript. Seeking a technical internship to build scalable AI systems and web applications.</p>
+      <p class="hero-subtitle">Software Developer · AI &amp; GenAI Engineer · Full-Stack</p>
+      <p class="hero-desc">Final-year B.Tech CSE student (2026) passionate about AI, Generative AI, and backend
+        development. Skilled in Python, FastAPI, LLM frameworks, and full-stack development with Java, Node.js, Next.js,
+        and TypeScript. Seeking a technical internship to build and deploy real-world AI systems and scalable web
+        applications.</p>
       <div class="hero-cta">
         <a href="#projects" class="btn-primary">View Projects</a>
         <a href="mailto:shaikayesha2107@gmail.com" class="btn-secondary">Get in Touch</a>
       </div>
     </div>
-    <div class="hero-stats">
+
+    <div class="hero-stats" style="display:none;">
       <div class="stat">
         <div class="stat-num">9.27</div>
         <div class="stat-label">CGPA</div>
@@ -1075,7 +1148,7 @@
         <div class="stat-label">LeetCode Problems</div>
       </div>
       <div class="stat">
-        <div class="stat-num">4</div>
+        <div class="stat-num">6+</div>
         <div class="stat-label">Certifications</div>
       </div>
     </div>
@@ -1095,8 +1168,8 @@
           <div class="skill-card-icon">⌨️</div>
           <div class="skill-card-title">Languages</div>
           <div class="skill-tags">
-            <span class="skill-tag">Java</span>
             <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
             <span class="skill-tag">JavaScript</span>
             <span class="skill-tag">TypeScript</span>
             <span class="skill-tag">C</span>
@@ -1104,30 +1177,32 @@
           </div>
         </div>
         <div class="skill-card reveal">
+          <div class="skill-card-icon">🧠</div>
+          <div class="skill-card-title">AI &amp; GenAI</div>
+          <div class="skill-tags">
+            <span class="skill-tag">GenAI</span>
+            <span class="skill-tag">LLMs</span>
+            <span class="skill-tag">RAG Systems</span>
+            <span class="skill-tag">LangChain</span>
+            <span class="skill-tag">LangGraph</span>
+            <span class="skill-tag">CrewAI</span>
+            <span class="skill-tag">ADK</span>
+            <span class="skill-tag">Embeddings</span>
+            <span class="skill-tag">Vector Search</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
           <div class="skill-card-icon">🌐</div>
           <div class="skill-card-title">Web &amp; Frameworks</div>
           <div class="skill-tags">
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">Flask</span>
+            <span class="skill-tag">Streamlit</span>
             <span class="skill-tag">Next.js</span>
             <span class="skill-tag">React.js</span>
             <span class="skill-tag">Node.js</span>
             <span class="skill-tag">Express.js</span>
-            <span class="skill-tag">FastAPI</span>
-            <span class="skill-tag">Flask</span>
-            <span class="skill-tag">Streamlit</span>
             <span class="skill-tag">Tailwind CSS</span>
-          </div>
-        </div>
-        <div class="skill-card reveal">
-          <div class="skill-card-icon">🧠</div>
-          <div class="skill-card-title">AI &amp; ML</div>
-          <div class="skill-tags">
-            <span class="skill-tag">GenAI</span>
-            <span class="skill-tag">LLMs</span>
-            <span class="skill-tag">RAG</span>
-            <span class="skill-tag">LangChain</span>
-            <span class="skill-tag">NLP</span>
-            <span class="skill-tag">TensorFlow</span>
-            <span class="skill-tag">scikit-learn</span>
           </div>
         </div>
         <div class="skill-card reveal">
@@ -1137,7 +1212,6 @@
             <span class="skill-tag">MySQL</span>
             <span class="skill-tag">PostgreSQL</span>
             <span class="skill-tag">MongoDB</span>
-            <span class="skill-tag">Qdrant</span>
           </div>
         </div>
         <div class="skill-card reveal">
@@ -1146,7 +1220,7 @@
           <div class="skill-tags">
             <span class="skill-tag">REST APIs</span>
             <span class="skill-tag">WebSockets</span>
-            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">MCP (FastMCP)</span>
             <span class="skill-tag">GitHub Actions</span>
             <span class="skill-tag">AWS</span>
             <span class="skill-tag">Google Cloud</span>
@@ -1154,12 +1228,14 @@
         </div>
         <div class="skill-card reveal">
           <div class="skill-card-icon">🏗️</div>
-          <div class="skill-card-title">Core Concepts</div>
+          <div class="skill-card-title">ML &amp; Core Concepts</div>
           <div class="skill-tags">
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">scikit-learn</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">Deep Learning</span>
             <span class="skill-tag">DSA</span>
             <span class="skill-tag">OOP</span>
-            <span class="skill-tag">DBMS</span>
-            <span class="skill-tag">OS</span>
             <span class="skill-tag">SDLC</span>
             <span class="skill-tag">Agile</span>
           </div>
@@ -1173,38 +1249,42 @@
     <div class="section-inner">
       <div class="section-label">Where I've Worked</div>
       <h2 class="section-title">Work <span>Experience</span></h2>
-      <div class="exp-card reveal" style="margin-bottom: 24px;">
-        <div class="exp-header">
-          <div>
-            <div class="exp-role">Front-End Developer Intern</div>
-            <div class="exp-company">ApexIQ, Bangalore</div>
+      <div class="exp-timeline">
+        <div class="exp-card reveal">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Front-End Developer Intern</div>
+              <div class="exp-company">ApexIQ, Bangalore</div>
+            </div>
+            <div class="exp-date">May 2025 – Dec 2025</div>
           </div>
-          <div class="exp-date">May 2025 – Dec 2025</div>
+          <ul class="exp-list">
+            <li>Participated in all phases of the SDLC including requirement analysis, design, development, testing,
+              release, and support.</li>
+            <li>Developed responsive, high-performing, and maintainable applications using Next.js, React.js, and
+              TypeScript.</li>
+            <li>Integrated RESTful APIs to enable seamless communication between frontend and backend services.</li>
+            <li>Implemented SEO optimization strategies including structured metadata, semantic HTML, and performance
+              enhancements.</li>
+            <li>Collaborated with cross-functional stakeholders in an Agile environment using Git-based version control
+              and CI/CD pipelines.</li>
+          </ul>
         </div>
-        <ul class="exp-list">
-          <li>Participated in all phases of the SDLC including requirement analysis, design, development, testing,
-            release, and support.</li>
-          <li>Developed responsive, high-performing, and maintainable applications using Next.js, React.js, and
-            TypeScript.</li>
-          <li>Integrated RESTful APIs to enable seamless communication between frontend and backend services.</li>
-          <li>Collaborated with cross-functional stakeholders in an Agile environment using Git-based version control.
-          </li>
-        </ul>
-      </div>
-      <div class="exp-card reveal">
-        <div class="exp-header">
-          <div>
-            <div class="exp-role">Research Intern – Deep Learning</div>
-            <div class="exp-company">IIIT Kurnool</div>
+        <div class="exp-card reveal">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Research Intern – Deep Learning</div>
+              <div class="exp-company">IIIT Kurnool</div>
+            </div>
+            <div class="exp-date">May 2025 – July 2025</div>
           </div>
-          <div class="exp-date">May 2025 – July 2025</div>
+          <ul class="exp-list">
+            <li>Researched and implemented CNN, LSTM, GRU, and Transformer models for Human Activity Recognition (HAR)
+              tasks using time-series sensor data.</li>
+            <li>Focused on model design, training, evaluation, data preprocessing, and performance analysis.</li>
+            <li>Contributed to experimental results and academic paper preparation for publication.</li>
+          </ul>
         </div>
-        <ul class="exp-list">
-          <li>Researched and implemented CNN, LSTM, GRU, and Transformer models for Human Activity Recognition (HAR)
-            tasks.</li>
-          <li>Focused on model tuning, data preprocessing, and performance analysis.</li>
-          <li>Contributed to experimental results and academic paper preparation.</li>
-        </ul>
       </div>
     </div>
   </section>
@@ -1215,178 +1295,258 @@
       <div class="section-label">What I've Built</div>
       <h2 class="section-title">Featured <span>Projects</span></h2>
 
-      <!-- Category Tabs -->
-      <div class="project-tabs">
-        <button class="project-tab active" onclick="switchTab('academic', this)">🎓 Academic</button>
-        <button class="project-tab" onclick="switchTab('freelance', this)">🚀 Freelance &amp; Open
-          Contributions</button>
+      <div class="project-tabs-container">
+        <div class="project-tabs">
+          <button class="project-tab active" onclick="switchTab('academic', this)">Academic</button>
+          <button class="project-tab" onclick="switchTab('freelance', this)">Freelance &amp; Internship</button>
+          <button class="project-tab" onclick="switchTab('personal', this)">Passion Projects</button>
+        </div>
       </div>
 
-      <!-- ACADEMIC CATEGORY -->
+      <!-- ACADEMIC -->
       <div class="project-category active" id="cat-academic">
-
-        <!-- Academic → AI Projects -->
         <div class="project-subsection">
           <div class="project-subsection-header">
-            <div class="project-subsection-label ai">🤖 AI Projects</div>
+            <div class="project-subsection-label ai">AI &amp; ML Projects</div>
             <div class="project-subsection-line"></div>
           </div>
           <div class="projects-grid">
             <div class="project-card ai-card reveal">
               <div class="project-num">01 — ACADEMIC</div>
-              <div class="project-name">Natural Language to SQL</div>
-              <div class="project-desc">Developed a system that converts natural language inputs into executable SQL
-                queries. Implemented backend validation and secure data retrieval from relational databases. Built a
-                simple web interface for query submission and result visualization.</div>
+              <div class="project-name">Natural Language to SQL (T5 Transformer)</div>
+              <div class="project-desc">Fine-tuned the T5 Transformer model on NL–SQL query pairs to convert natural
+                language inputs into executable SQL commands. Integrated with an employee database for real-time query
+                execution and deployed via Streamlit Cloud for live demonstrations.</div>
               <div class="project-tech">
-                <span>Python</span><span>NLP</span><span>SQL</span><span>Flask</span>
+                <span>Python</span><span>T5 Transformer</span><span>NLP</span><span>SQL</span><span>Streamlit</span>
               </div>
               <div class="project-links">
-                <a href="https://github.com/21ayeshashaik" target="_blank" class="project-link">GitHub</a>
+                <a href="https://github.com/21ayeshashaik/NL2SQL" target="_blank" class="project-link">GitHub</a>
               </div>
             </div>
             <div class="project-card ai-card reveal">
               <div class="project-num">02 — ACADEMIC</div>
-              <div class="project-name">AI-Powered Thief Detection</div>
-              <div class="project-desc">Designed a real-time intruder detection system using TensorFlow.js (COCO-SSD)
-                and React webcam. Triggers alert notifications upon detecting suspicious movement with high confidence.
-                Features a simple browser-based interface for live detection.</div>
-              <div class="project-tech">
-                <span>TensorFlow.js</span><span>React.js</span><span>Computer Vision</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/21ayeshashaik" target="_blank" class="project-link">GitHub</a>
-              </div>
-            </div>
-            <div class="project-card ai-card reveal">
-              <div class="project-num">03 — ACADEMIC</div>
-              <div class="project-name">DeepFER Emotion Recognition</div>
-              <div class="project-desc">Facial Emotion Recognition using a trained CNN model on the FER-2013 dataset.
-                Detects 7 classes of emotions in real-time via webcam.</div>
-              <div class="project-tech">
-                <span>Python</span><span>TensorFlow</span><span>OpenCV</span><span>CNN</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/21ayeshashaik" target="_blank" class="project-link">GitHub</a>
-              </div>
-            </div>
-            <div class="project-card ai-card reveal">
-              <div class="project-num">04 — ACADEMIC</div>
               <div class="project-name">Android Malware Detection</div>
               <div class="project-desc">ML model to detect malware in Android apps by analyzing permissions and API
-                calls. Utilized Random Forest and XGBoost for classification.</div>
+                calls. Utilized Random Forest and XGBoost for classification. Includes IPython notebook with full model
+                training, evaluation, and a detailed report.</div>
               <div class="project-tech">
-                <span>Python</span><span>Machine Learning</span><span>Scikit-learn</span>
+                <span>Python</span><span>Scikit-learn</span><span>XGBoost</span><span>Jupyter Notebook</span>
               </div>
               <div class="project-links">
-                <a href="https://github.com/21ayeshashaik" target="_blank" class="project-link">GitHub</a>
+                <a href="https://github.com/21ayeshashaik/android-malware-detection" target="_blank"
+                  class="project-link">GitHub</a>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Academic → Web Projects -->
         <div class="project-subsection">
           <div class="project-subsection-header">
-            <div class="project-subsection-label web">🌐 Web Projects</div>
+            <div class="project-subsection-label web">Web Projects</div>
             <div class="project-subsection-line"></div>
           </div>
           <div class="projects-grid">
             <div class="project-card web-card reveal">
-              <div class="project-num">05 — ACADEMIC</div>
-              <div class="project-name">Online Complaint System</div>
-              <div class="project-desc">Developed a full-stack complaint registration and tracking system using the MERN
-                stack. Implemented JWT-based authentication with role-based access control. Designed RESTful APIs and
-                deployed the application with cloud-hosted databases.</div>
+              <div class="project-num">03 — ACADEMIC</div>
+              <div class="project-name">ResolveNow – Complaint Management</div>
+              <div class="project-desc">Full-stack web app where users submit complaints managed and resolved by
+                designated agents under admin supervision. Implements role-based access (Admin/Agent/User), JWT
+                authentication, RESTful APIs, and ensures efficient complaint lifecycle tracking.</div>
               <div class="project-tech">
-                <span>MongoDB</span><span>Express.js</span><span>React.js</span><span>Node.js</span>
+                <span>MongoDB</span><span>Express.js</span><span>React.js</span><span>Node.js</span><span>JWT</span>
               </div>
               <div class="project-links">
-                <a href="https://github.com/21ayeshashaik" target="_blank" class="project-link">GitHub</a>
-              </div>
-            </div>
-            <div class="project-card web-card reveal">
-              <div class="project-num">06 — ACADEMIC</div>
-              <div class="project-name">Zync - Group Chat App</div>
-              <div class="project-desc">Real-time group chat application using Socket.IO and MERN stack. Supports
-                instant messaging, room creation, and persistent chat history.</div>
-              <div class="project-tech">
-                <span>React.js</span><span>Socket.IO</span><span>Node.js</span><span>MongoDB</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/21ayeshashaik" target="_blank" class="project-link">GitHub</a>
+                <a href="https://github.com/21ayeshashaik/ResolveNow" target="_blank" class="project-link">GitHub</a>
+                <a href="https://complaint-management-system-five.vercel.app/" target="_blank" class="project-link">Live
+                  Demo</a>
               </div>
             </div>
           </div>
         </div>
-
       </div>
 
-      <!-- FREELANCE / OPEN CONTRIBUTIONS CATEGORY -->
-      <div class="project-category" id="cat-freelance">
-
-        <!-- Freelance → AI Projects -->
+      <!-- PERSONAL -->
+      <div class="project-category" id="cat-personal">
         <div class="project-subsection">
           <div class="project-subsection-header">
-            <div class="project-subsection-label ai">🤖 AI Projects</div>
+            <div class="project-subsection-label ai">AI Projects</div>
             <div class="project-subsection-line"></div>
           </div>
           <div class="projects-grid">
             <div class="project-card ai-card reveal">
-              <div class="project-num">01 — FREELANCE</div>
+              <div class="project-num">01 — PERSONAL</div>
               <div class="project-name">Cold Email Generator</div>
-              <div class="project-desc">Built a Streamlit web app that generates personalized cold emails from job
-                posting URLs. Utilized LangChain and NLP to match skills from portfolio projects and create tailored
-                outreach emails with an interactive interface for real-time previews.</div>
+              <div class="project-desc">Streamlit web app that generates personalized cold emails from job posting URLs.
+                Uses LangChain and NLP to extract job details and required skills, then matches them with portfolio
+                projects to create tailored outreach emails with real-time preview.</div>
               <div class="project-tech">
-                <span>Streamlit</span><span>LangChain</span><span>LLM</span><span>Python</span>
+                <span>Streamlit</span><span>LangChain</span><span>LLM</span><span>Python</span><span>NLP</span>
               </div>
               <div class="project-links">
-                <a href="https://github.com/21ayeshashaik" target="_blank" class="project-link">GitHub</a>
+                <a href="https://github.com/21ayeshashaik/Cold_Email_Generator" target="_blank"
+                  class="project-link">GitHub</a>
+              </div>
+            </div>
+            <div class="project-card ai-card reveal">
+              <div class="project-num">02 — PERSONAL</div>
+              <div class="project-name">Call Quality Analyzer</div>
+              <div class="project-desc">A Python-based tool to analyze sales call recordings with cutting-edge AI
+                techniques. Automatically calculates key call metrics like talk-time ratio, question count, longest
+                monologue, call sentiment, and generates actionable insights from audio recordings.</div>
+              <div class="project-tech">
+                <span>Python</span><span>OpenAI
+                  Whisper</span><span>NLP</span><span>Multi-modal</span><span>Pyannote</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/21ayeshashaik/Call_Quality_Analyzer" target="_blank"
+                  class="project-link">GitHub</a>
+              </div>
+            </div>
+            <div class="project-card ai-card reveal">
+              <div class="project-num">03 — PERSONAL</div>
+              <div class="project-name">Thief Detection Alarm System</div>
+              <div class="project-desc">A real-time, web-based security solution that uses object detection techniques
+                to identify the presence of unauthorized individuals or suspicious activities through a webcam feed
+                using the COCO model.</div>
+              <div class="project-tech">
+                <span>Python</span><span>Computer Vision</span><span>Object Detection</span><span>COCO Model</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/21ayeshashaik/theif-alert" target="_blank" class="project-link">GitHub</a>
+                <a href="https://theif-alert.vercel.app" target="_blank" class="project-link">Live Demo</a>
+              </div>
+            </div>
+            <div class="project-card ai-card reveal">
+              <div class="project-num">04 — PERSONAL</div>
+              <div class="project-name">DeepFER</div>
+              <div class="project-desc">A deep learning-based system to classify facial expressions into basic human
+                emotions using Convolutional Neural Networks (CNNs).</div>
+              <div class="project-tech">
+                <span>Python</span><span>Deep Learning</span><span>CNNs</span><span>Computer Vision</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/21ayeshashaik/Facial-emotion-recognization" target="_blank"
+                  class="project-link">GitHub</a>
+              </div>
+            </div>
+            <div class="project-card ai-card reveal">
+              <div class="project-num">05 — PERSONAL</div>
+              <div class="project-name">Netflix-Clustering</div>
+              <div class="project-desc">Uses TF-IDF and KMeans clustering to group Netflix titles based on their
+                descriptions. Categorizes content into themes or genres to improve recommendations and insights.</div>
+              <div class="project-tech">
+                <span>Python</span><span>TF-IDF</span><span>KMeans</span><span>Clustering</span><span>Scikit-learn</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/21ayeshashaik/Netflix-Clustering" target="_blank"
+                  class="project-link">GitHub</a>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Freelance → Web Projects -->
         <div class="project-subsection">
           <div class="project-subsection-header">
-            <div class="project-subsection-label web">🌐 Web Projects</div>
+            <div class="project-subsection-label web">Web Projects</div>
+            <div class="project-subsection-line"></div>
+          </div>
+          <div class="projects-grid">
+            <div class="project-card web-card reveal">
+              <div class="project-num">06 — PERSONAL</div>
+              <div class="project-name">Zync ChatApp</div>
+              <div class="project-desc">A full-stack real-time chat application with features like authentication and
+                live messaging. Built with Next.js frontend, Node.js + Express backend, Socket.IO for real-time
+                communication, and MongoDB.</div>
+              <div class="project-tech">
+                <span>Next.js</span><span>Node.js</span><span>Socket.IO</span><span>MongoDB</span><span>JWT</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/21ayeshashaik/Zync-chatapp" target="_blank" class="project-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FREELANCE / INTERNSHIP -->
+      <div class="project-category" id="cat-freelance">
+        <div class="project-subsection">
+          <div class="project-subsection-header">
+            <div class="project-subsection-label web">Web Projects</div>
             <div class="project-subsection-line"></div>
           </div>
           <div class="projects-grid">
             <div class="project-card web-card reveal">
               <div class="project-num">01 — FREELANCE</div>
               <div class="project-name">FlairYourTrip</div>
-              <div class="project-desc">Designed and implemented a full-stack web application enabling users to explore
-                destinations, itineraries, and book travel packages. Built a role-based admin panel with complete CRUD
-                operations, optimized MySQL queries, and integrated AWS S3 for secure media storage. Demonstrated
-                end-to-end ownership from requirements gathering to deployment.</div>
+              <div class="project-desc">Full-stack travel itinerary and booking platform enabling users to explore
+                destinations and book travel packages. Built a role-based admin panel with complete CRUD operations,
+                optimized MySQL queries, and integrated AWS S3 for secure media storage.</div>
               <div class="project-tech">
-                <span>Next.js</span><span>TypeScript</span><span>Node.js</span><span>MySQL</span><span>AWS</span>
+                <span>Next.js</span><span>TypeScript</span><span>Node.js</span><span>MySQL</span><span>AWS S3</span>
               </div>
               <div class="project-links">
-                <a href="#" class="project-link">Live Demo</a>
+                <a href="https://www.flairyourtrip.com/" target="_blank" class="project-link">Live Site</a>
               </div>
             </div>
             <div class="project-card web-card reveal">
-              <div class="project-num">02 — INTERNSHIP</div>
+              <div class="project-num">02 — FREELANCE</div>
+              <div class="project-name">Huntingskaud</div>
+              <div class="project-desc">Freelance web project built with TypeScript featuring modern component-driven
+                frontend architecture and responsive UI design.</div>
+              <div class="project-tech">
+                <span>TypeScript</span><span>Next.js</span><span>React.js</span><span>Tailwind CSS</span>
+              </div>
+              <div class="project-links">
+                <a href="https://huntingskaud.vercel.app" target="_blank" class="project-link">Live Demo</a>
+              </div>
+            </div>
+            <div class="project-card web-card reveal">
+              <div class="project-num">03 — FREELANCE</div>
+              <div class="project-name">Tyrano.in</div>
+              <div class="project-desc">Freelance project — designed and built a responsive, production-ready web
+                presence for Tyrano.in with modern UI/UX practices and optimized performance.</div>
+              <div class="project-tech">
+                <span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span>
+              </div>
+              <div class="project-links">
+                <a href="https://tyrano.in" target="_blank" class="project-link">Live Site</a>
+              </div>
+            </div>
+            <div class="project-card web-card reveal">
+              <div class="project-num">04 — INTERNSHIP</div>
+              <div class="project-name">TalkToPDF</div>
+              <div class="project-desc">AI-powered internship project letting users upload PDFs and interact with
+                content through natural language questions. Enables conversational document exploration built with
+                TypeScript and Next.js.</div>
+              <div class="project-tech">
+                <span>TypeScript</span><span>Next.js</span><span>AI</span><span>PDF Processing</span>
+              </div>
+              <div class="project-links">
+                <a href="https://talktopdf.apexiq.ai" target="_blank" class="project-link">Live Site</a>
+              </div>
+            </div>
+            <div class="project-card web-card reveal">
+              <div class="project-num">05 — INTERNSHIP</div>
               <div class="project-name">ApexIQ Platform UI</div>
               <div class="project-desc">Built responsive industry pages and integrated REST APIs for the ApexIQ B2B SaaS
-                platform using Next.js and TypeScript during internship.</div>
+                platform. Delivered pixel-perfect interfaces aligned with brand guidelines with SEO improvements through
+                semantic HTML and structured metadata.</div>
               <div class="project-tech">
                 <span>Next.js</span><span>TypeScript</span><span>React.js</span><span>Tailwind CSS</span>
               </div>
               <div class="project-links">
-                <a href="https://github.com/21ayeshashaik" target="_blank" class="project-link">GitHub</a>
+                <a href="https://apexiq.ai/" target="_blank" class="project-link">Live Site</a>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
+
+
 
   <!-- EDUCATION -->
   <section id="education">
@@ -1399,7 +1559,7 @@
           <div class="edu-school">Rajiv Gandhi University of Knowledge Technologies (RGUKT), Srikakulam</div>
           <div class="edu-meta">
             <div class="edu-cgpa">CGPA: 9.27</div>
-            <div class="edu-year">2022 – 2026</div>
+            <div class="edu-year">Sep 2022 – 2026</div>
           </div>
         </div>
         <div class="edu-card">
@@ -1411,6 +1571,7 @@
           </div>
         </div>
       </div>
+
       <div class="cert-grid">
         <div class="cert-card reveal">
           <div class="cert-icon">🏆</div>
@@ -1440,6 +1601,27 @@
             <div class="cert-issuer">IBM · 2023</div>
           </div>
         </div>
+        <div class="cert-card reveal">
+          <div class="cert-icon">💼</div>
+          <div>
+            <div class="cert-name">Career Edge – Young Professional</div>
+            <div class="cert-issuer">TCS iON · 2024</div>
+          </div>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-icon">🔬</div>
+          <div>
+            <div class="cert-name">Full Stack Development (MERN) – Short-Term Internship</div>
+            <div class="cert-issuer">SmartBridge + APSCHE · 2025</div>
+          </div>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-icon">📊</div>
+          <div>
+            <div class="cert-name">Data Science Using Python – International Workshop</div>
+            <div class="cert-issuer">International Workshop · 2024</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1454,21 +1636,22 @@
           <div class="cert-icon">🥇</div>
           <div>
             <div class="cert-name">LeetCode &amp; HackerRank</div>
-            <div class="cert-issuer">Solved 150+ LeetCode problems; 5 Python stars on HackerRank</div>
+            <div class="cert-issuer">150+ LeetCode problems (50-Day Badge); 5★ Python, 4★ Problem Solving on HackerRank
+            </div>
           </div>
         </div>
         <div class="cert-card reveal">
-          <div class="cert-icon">�</div>
+          <div class="cert-icon">🎖️</div>
           <div>
             <div class="cert-name">Certificate of Merit in Java</div>
-            <div class="cert-issuer">Sanfoundry Certification</div>
+            <div class="cert-issuer">Sanfoundry — Grade A, 80%</div>
           </div>
         </div>
         <div class="cert-card reveal">
           <div class="cert-icon">🤝</div>
           <div>
             <div class="cert-name">Workshops &amp; Hackathons</div>
-            <div class="cert-issuer">Participated in AI/ML Hackathons and workshops on LLMs &amp; RAG</div>
+            <div class="cert-issuer">AI/ML Hackathons; Workshops on LLMs, RAG, Cloud AI &amp; Data Science</div>
           </div>
         </div>
       </div>
@@ -1482,8 +1665,8 @@
       <div class="contact-wrapper">
         <div class="reveal">
           <h2 class="contact-tagline">Ready to build something <span>remarkable</span> together?</h2>
-          <p class="contact-sub">I'm currently seeking entry-level software development roles. Whether you have a
-            project in mind or just want to say hello, my inbox is always open.</p>
+          <p class="contact-sub">I'm currently seeking entry-level software development and AI/ML internship roles.
+            Whether you have a project in mind or just want to say hello, my inbox is always open.</p>
         </div>
         <div class="contact-links reveal">
           <a href="mailto:shaikayesha2107@gmail.com" class="contact-item">
@@ -1505,14 +1688,14 @@
             <div class="contact-item-icon">💼</div>
             <div>
               <div class="contact-item-label">LinkedIn</div>
-              <div class="contact-item-val">linkedin.com/in/ayesha-shaik</div>
+              <div class="contact-item-val">linkedin.com/in/shaikayesha3333330</div>
             </div>
           </a>
           <a href="https://github.com/21ayeshashaik" target="_blank" rel="noopener noreferrer" class="contact-item">
             <div class="contact-item-icon">⌨️</div>
             <div>
               <div class="contact-item-label">GitHub</div>
-              <div class="contact-item-val">github.com/ayesha-shaik</div>
+              <div class="contact-item-val">github.com/21ayeshashaik</div>
             </div>
           </a>
         </div>
@@ -1526,44 +1709,14 @@
   </footer>
 
   <script>
-    // Custom cursor
-    const cursor = document.getElementById('cursor');
-    const ring = document.getElementById('cursorRing');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      cursor.style.left = mx + 'px';
-      cursor.style.top = my + 'px';
-    });
-
-    function animateRing() {
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      ring.style.left = rx + 'px';
-      ring.style.top = ry + 'px';
-      requestAnimationFrame(animateRing);
-    }
-    animateRing();
-
-    document.querySelectorAll('a, button, .skill-card, .project-card, .cert-card, .edu-card').forEach(el => {
-      el.addEventListener('mouseenter', () => { cursor.classList.add('hover'); ring.classList.add('hover'); });
-      el.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); ring.classList.remove('hover'); });
-    });
-
-    // Project tab switcher
     function switchTab(category, btn) {
-      // Update tab buttons
       document.querySelectorAll('.project-tab').forEach(t => t.classList.remove('active'));
       btn.classList.add('active');
-      // Update categories
       document.querySelectorAll('.project-category').forEach(c => c.classList.remove('active'));
       document.getElementById('cat-' + category).classList.add('active');
-      // Re-observe newly visible reveal elements
       document.querySelectorAll('#cat-' + category + ' .reveal:not(.visible)').forEach(el => observer.observe(el));
     }
 
-    // Scroll reveal
     const observer = new IntersectionObserver(entries => {
       entries.forEach((e, i) => {
         if (e.isIntersecting) {
@@ -1575,7 +1728,6 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Smooth active nav
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
     window.addEventListener('scroll', () => {
