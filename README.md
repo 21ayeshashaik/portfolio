@@ -1,11 +1,11 @@
-# 👩‍💻 Ayesha Shaik – Developer Portfolio
+#  Ayesha Shaik – Developer Portfolio
 
 Hi! I'm **Ayesha Shaik**, a Software Developer passionate about **Frontend Development, APIs, and Machine Learning**.
 I enjoy building scalable applications and solving real-world problems using code.
 
 ---
 
-## 🚀 Skills
+##  Skills
 
 ### Programming Languages
 
@@ -39,7 +39,7 @@ I enjoy building scalable applications and solving real-world problems using cod
 
 
 
-## 📫 Contact
+##  Contact
 
 * **GitHub:** https://github.com/21ayeshashaik
 * **LinkedIn:** https://www.linkedin.com/in/shaikayesha3333330/
@@ -47,4 +47,4 @@ I enjoy building scalable applications and solving real-world problems using cod
 * **Portfolio:**: https://ayeshashaik21.netlify.app/
 ---
 
-⭐ If you like my projects, feel free to explore the repositories and give them a star!
+ If you like my projects, feel free to explore the repositories and give them a star!
